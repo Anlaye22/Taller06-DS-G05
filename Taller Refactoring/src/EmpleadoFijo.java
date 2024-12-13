@@ -1,17 +1,14 @@
 public class EmpleadoFijo extends Empleado {
     private double bonoAnual;
 
-    public EmpleadoFijo(String nombre, double salarioBase, int horasTrabajadas, String departamento, double bonoAnual, String genero) {
-        super(nombre, salarioBase, horasTrabajadas, 0, departamento,genero);
+    public EmpleadoFijo(String nombre, String genero, double salarioBase, int horasTrabajadas, String departamento, double bonoAnual) {
+        super(nombre,genero, salarioBase, horasTrabajadas, departamento);
         this.bonoAnual = bonoAnual;    
     }
 
+    @Override
     public void imprimirDetalles() {
-        System.out.println("Nombre: " + super.getNombre());
-        System.out.println("Genero: " + super.getNombre());
-        System.out.println("Salario: " + super.getSalarioBase());
-        System.out.println("Horas trabajadas: " + super.getHorasTrabajadas());
-        System.out.println("Departamento: " + super.getDepartamento());
+        super.imprimirDetalles();
         System.out.println("bonoAnual: " + bonoAnual);
     }
 

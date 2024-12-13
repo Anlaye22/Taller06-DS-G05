@@ -1,19 +1,19 @@
 public class Empleado {
     private String nombre;
+    private String genero; 
     private double salarioBase;
     private int horasTrabajadas;
     private String departamento;
-    private double tarifaHora;
-    private String genero;
+
 
     public Empleado(){}
-    public Empleado(String nombre, double salarioBase, int horasTrabajadas, double tarifaHora, String departamento, String genero) {
+    public Empleado(String nombre, String genero, double salarioBase, int horasTrabajadas, String departamento) {
         this.nombre = nombre;
+        this.genero = genero;
         this.salarioBase = salarioBase;
         this.horasTrabajadas = horasTrabajadas;
-        this.tarifaHora = tarifaHora;
         this.departamento = departamento;
-        this.genero = genero;
+
     }
 
     public double calcularSalario() {
@@ -24,8 +24,9 @@ public class Empleado {
         if (horasTrabajadas >= 0) {
              throw new IllegalArgumentException("Las horas trabajadas deben ser mayor o igual a 0");
        }
+       // Horas trabajadas normales = 40
         if (horasTrabajadas > 40){
-            return sañarioTotal + (horasTrabajadas - 40) * 50;
+            return salarioTotal + (horasTrabajadas - 40) * 50; // Pago de horas extras
         }
         return salarioTotal;
     }   
@@ -41,6 +42,13 @@ public class Empleado {
                 break;
         }
         return 0;
+    }
+    public void imprimirDetalles() {
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("Genero: " + getGenero());
+        System.out.println("Salario: " +getSalarioBase());
+        System.out.println("Horas trabajadas: " + getHorasTrabajadas());
+        System.out.println("Departamento: " + getDepartamento());
     }
 
     public String getNombre() {
@@ -82,6 +90,11 @@ public class Empleado {
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
     }
+    public String getGenero() {
+        return genero;
+    }
+
+
 
     // Más metodos
 }
