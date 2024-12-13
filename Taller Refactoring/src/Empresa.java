@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Empresa {
-    private List<Empleado> empleados;
+    private static List<Empleado> empleados;
 
     public Empresa() {
         empleados = new ArrayList<>();
@@ -26,7 +26,7 @@ public class Empresa {
         return empleadosPorTipo;
     }
 
-    public static Empleado buscarEmpleadoPorNombre(String nombre, List<Empleado> empleados) {
+    public static Empleado buscarEmpleadoPorNombre(String nombre) {
         for (Empleado empleado : empleados) {
             if (empleado.getNombre().equals(nombre)) {
                 return empleado;

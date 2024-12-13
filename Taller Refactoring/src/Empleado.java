@@ -43,6 +43,8 @@ public class Empleado {
         }
         return 0;
     }
+
+
     public void imprimirDetalles() {
         System.out.println("Nombre: " + getNombre());
         System.out.println("Genero: " + getGenero());
@@ -74,15 +76,7 @@ public class Empleado {
     public void setHorasTrabajadas(int horasTrabajadas) {
         this.horasTrabajadas = horasTrabajadas;
     }
-
-    public double getTarifaHora() {
-        return tarifaHora;
-    }
-
-    public void setTarifaHora(double tarifaHora) {
-        this.tarifaHora = tarifaHora;
-    }
-
+    
     public String getDepartamento() {
         return departamento;
     }
